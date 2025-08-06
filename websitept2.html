@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aaditya Grover | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- GSAP Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    :root {
+      --primary: #a103fc;
+      --accent: #c084fc;
+      --bg: #232323;
+      --text: #ffffff;
+      --card: #2b2b29;
+      --shadow: 0 4px 24px rgba(30,30,60,0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 2.5rem 0 1.5rem 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: var(--shadow);
+    }
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0.7rem 0 0 0;
+      font-size: 1.15rem;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+    nav {
+      margin-top: 1.3rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.3rem;
+      font-weight: 600;
+      font-size: 1.07rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 1rem;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: var(--primary);
+      background: var(--accent);
+    }
+    .container {
+      max-width: 940px;
+      margin: 2rem auto;
+      padding: 0 1.2rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: var(--card);
+      border-radius: 1.2rem;
+      box-shadow: var(--shadow);
+      padding: 2.2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      /* force all section text to white */
+      color: var(--text);
+    }
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* Lists inside cards */
+    .skills-list,
+    .course-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.2rem;
+    }
+    .skills-list li,
+    .course-list li {
+      background: var(--bg);
+      border-radius: 0.6rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(30,30,60,0.04);
+      color: var(--text);
+    }
+
+    .exp-list,
+    .proj-list,
+    .activity-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .exp-title,
+    .proj-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.13rem;
+      margin-bottom: 0.1rem;
+    }
+    .exp-meta,
+    .proj-meta {
+      font-size: 0.99rem;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+    .exp-desc,
+    .proj-desc {
+      margin: 0.2rem 0 0 0;
+      color: var(--text);
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.1rem;
+      flex-wrap: wrap;
+    }
+    .contact-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.01rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      transition: color 0.2s, border 0.2s;
+    }
+    .contact-links a:hover {
+      color: var(--accent);
+      border-bottom: 2px solid var(--primary);
+    }
+    .fab,
+    .fas {
+      font-size: 1.18em;
+      margin-right: 0.2em;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      section { padding: 1rem; }
+      .container { padding: 0 0.5rem; }
+      nav a { margin: 0 0.4rem; font-size: 1rem;}
+      .profile-img { width: 75px; height: 75px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4"
+         alt="Aaditya Grover profile photo"
+         class="profile-img" />
+    <h1>Aaditya Grover</h1>
+    <p>Computer Science @ UC Davis &mdash; Minor in Economics</p>
+    <nav>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#activities">Leadership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="education">
+      <h2>Education</h2>
+      <p><strong>University of California, Davis</strong><br>
+         B.S. in Computer Science, Minor in Economics<br>
+         <em>Expected Graduation: June 2027</em>
+      </p>
+      <div>
+        <strong>Related Coursework:</strong>
+        <ul class="course-list">
+          <li>Data Structures & Algorithms</li>
+          <li>Object-Oriented Programming</li>
+          <li>Assembly Languages</li>
+          <li>Machine Learning</li>
+          <li>Artificial Intelligence</li>
+          <li>Algorithm Design and Analysis</li>
+          <li>Intermediate Microeconomics</li>
+          <li>Intermediate Macroeconomics</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div>
+        <strong>Languages:</strong>
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>C++</li>
+          <li>C</li>
+          <li>Java</li>
+          <li>Swift</li>
+          <li>Rust</li>
+          <li>Dart</li>
+          <li>JavaScript</li>
+          <li>HTML/CSS</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Frameworks:</strong>
+        <ul class="skills-list">
+          <li>TensorFlow</li>
+          <li>Flutter</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+        </ul>
+      </div>
+      <div>
+        <strong>ISAs:</strong>
+        <ul class="skills-list">
+          <li>x86</li>
+          <li>RISC-V</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Tools:</strong>
+        <ul class="skills-list">
+          <li>RStudio</li>
+          <li>PyCharm</li>
+          <li>Jupyter</li>
+          <li>Git</li>
+          <li>Docker</li>
+          <li>Eclipse</li>
+          <li>Android Studio</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="exp-list">
+        <li>
+          <div class="exp-title">Flutter Intern — UniteCloud</div>
+          <div class="exp-meta">Delhi, India | Aug 2024 – Sep 2024</div>
+          <div class="exp-desc">
+            Developed a mobile app layout using Dart/Flutter for an adventure-planning platform.
+          </div>
+        </li>
+        <li>
+          <div class="exp-title">AI Intern — Cambay Consulting</div>
+          <div class="exp-meta">Delhi, India | Jul 2022 – Sep 2022</div>
+          <div class="exp-desc">
+            Integrated AI algorithms into automotive systems to optimize performance.
+          </div>
+        </li>
+        <li>
+          <div class="exp-title">Web Developer — Umeed NGO</div>
+          <div class="exp-meta">Noida, India | Mar 2021 – Dec 2021</div>
+          <div class="exp-desc">
+            Built website layouts & COVID-19 info bot serving 50K+ users using real-time API data.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="proj-list">
+        <li>
+          <div class="proj-title">Tech Journal — Founder</div>
+          <div class="proj-meta">Apr 2022 – Present</div>
+          <div class="proj-desc">
+            Launched a tech blog & daily-news app via Buildspace; produce product reviews & tutorials.
+          </div>
+        </li>
+        <li>
+          <div class="proj-title">Cohort Explorer — GDSC UC Davis</div>
+          <div class="proj-meta">Jan 2025 – Present</div>
+          <div class="proj-desc">
+            ML pipeline for ocular disease classification—data prep, model training, deployment.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="activities">
+      <h2>Activities & Leadership</h2>
+      <ul class="activity-list">
+        <li><strong>VP</strong> — Enigma Quizzing Club (Apr 2022 – May 2023)</li>
+        <li><strong>Member</strong> — eSpice Tech Club (May 2022 – May 2023)</li>
+        <li><strong>Firmware Member</strong> — UC Davis FSAE Electric (Sep 2023 – Present)</li>
+        <li><strong>Co-Lead</strong> — GDSC Cohort Explorer (Sep 2024 – Present)</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:grover@ucdavis.edu"><i class="fas fa-envelope"></i>Email</a>
+        <a href="tel:+16282338148"><i class="fas fa-phone"></i>(628) 233-8148</a>
+        <a href="https://linkedin.com/in/aaditya-grover-b93567234" target="_blank">
+          <i class="fab fa-linkedin"></i>LinkedIn
+        </a>
+        <a href="https://github.com/groverucd" target="_blank">
+          <i class="fab fa-github"></i>GitHub
+        </a>
+      </div>
+      <p style="margin-top:1rem; color: #888;">Davis, CA</p>
+    </section>
+  </div>
+
+  <script>
+    // Animate sections on load
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.to("section", {
+        opacity: 1,
+        y: 0,
+        stagger: 0.18,
+        duration: 0.7,
+        ease: "power2.out"
+      });
+
+      // Highlight nav link on scroll
+      const navLinks = document.querySelectorAll("nav a");
+      const sections = [...document.querySelectorAll("section")];
+      window.addEventListener("scroll", () => {
+        let idx = sections.findIndex(s => window.scrollY < s.offsetTop - 80);
+        if (idx === -1) idx = sections.length - 1;
+        navLinks.forEach(a => a.classList.remove("active"));
+        navLinks[Math.max(0, idx)].classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
