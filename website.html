@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aaditya Grover | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- Lenis for smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+  <style>
+    :root {
+      --primary: #1a237e;
+      --accent: #ffd600;
+      --bg: #f5f5f5;
+      --text: #222;
+      --card: #fff;
+      --shadow: 0 4px 24px rgba(30,30,60,0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: var(--shadow);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    header p {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.1rem;
+      color: #ffd600;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: var(--card);
+      border-radius: 1rem;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .skills-list, .course-list, .exp-list, .proj-list, .activity-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.2rem;
+    }
+    .skills-list li, .course-list li, .exp-list li, .proj-list li, .activity-list li {
+      background: var(--bg);
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(30,30,60,0.04);
+    }
+    .exp-list, .proj-list, .activity-list {
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .exp-title, .proj-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+    .exp-meta, .proj-meta {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+    .exp-desc, .proj-desc {
+      margin: 0.2rem 0 0 0;
+    }
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .contact-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent);
+      transition: color 0.2s, border 0.2s;
+    }
+    .contact-links a:hover {
+      color: var(--accent);
+      border-bottom: 2px solid var(--primary);
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      section { padding: 1rem; }
+      .container { padding: 0 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aaditya Grover</h1>
+    <p>Computer Science @ UC Davis &mdash; Minor in Economics</p>
+    <nav>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#activities">Leadership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <div class="container">
+    <section id="education">
+      <h2>Education</h2>
+      <p><strong>University of California, Davis</strong> <br>
+        B.S. in Computer Science, Minor in Economics <br>
+        <em>Expected Graduation: June 2027</em>
+      </p>
+      <div>
+        <strong>Related Coursework:</strong>
+        <ul class="course-list">
+          <li>Data Structures & Algorithms</li>
+          <li>Object-Oriented Programming</li>
+          <li>Assembly Languages</li>
+          <li>Machine Learning</li>
+          <li>Artificial Intelligence</li>
+          <li>Algorithm Design and Analysis</li>
+          <li>Intermediate Microeconomics</li>
+          <li>Intermediate Macroeconomics</li>
+        </ul>
+      </div>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div>
+        <strong>Languages:</strong>
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>C++</li>
+          <li>C</li>
+          <li>Java</li>
+          <li>Swift (iOS)</li>
+          <li>Rust</li>
+          <li>Dart</li>
+          <li>JavaScript</li>
+          <li>HTML/CSS</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Frameworks:</strong>
+        <ul class="skills-list">
+          <li>TensorFlow</li>
+          <li>Flutter</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Instruction Set Architectures:</strong>
+        <ul class="skills-list">
+          <li>x86</li>
+          <li>RISC-V</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Developer Tools:</strong>
+        <ul class="skills-list">
+          <li>RStudio</li>
+          <li>PyCharm</li>
+          <li>Jupyter Notebooks</li>
+          <li>Git</li>
+          <li>Docker</li>
+          <li>Eclipse</li>
+          <li>Android Studio</li>
+        </ul>
+      </div>
+    </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="exp-list">
+        <li>
+          <div class="exp-title">Flutter Intern &mdash; UniteCloud</div>
+          <div class="exp-meta">Delhi, India | Aug 2024 – Sep 2024</div>
+          <div class="exp-desc">
+            Developed a mobile application layout using Dart and Flutter in Android Studio for a client, creating an adventure planning platform that helps users discover trekking options near their destinations.
+          </div>
+        </li>
+        <li>
+          <div class="exp-title">Intern &mdash; Cambay Consulting</div>
+          <div class="exp-meta">Delhi, India | Jul 2022 – Sep 2022</div>
+          <div class="exp-desc">
+            Contributed to an AI project for an automotive client, focusing on optimizing vehicle performance and enhancing autonomous driving capabilities. Collaborated with cross-functional teams to integrate AI algorithms into existing systems, improving overall system efficiency.
+          </div>
+        </li>
+        <li>
+          <div class="exp-title">Web Developer &mdash; Umeed - A Drop of Hope (NGO)</div>
+          <div class="exp-meta">Noida, India | Mar 2021 – Dec 2021</div>
+          <div class="exp-desc">
+            Developed website layouts and a Coronavirus Information Bot to help users find local resources, utilizing a COVID-19 API to display daily test counts, aiding over 50,000 people in accessing verified COVID safety resources.
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="proj-list">
+        <li>
+          <div class="proj-title">Tech Journal &mdash; Founder</div>
+          <div class="proj-meta">Delhi, India | Apr 2022 – Present</div>
+          <div class="proj-desc">
+            Created a tech blog and Instagram page to share feedback and reviews of the latest technology and product launches. Currently building an app to deliver daily tech news, participating in buildspace's accelerator.
+          </div>
+        </li>
+        <li>
+          <div class="proj-title">Cohort Explorer &mdash; Google Developer Student Club, UC Davis</div>
+          <div class="proj-meta">Davis, CA | Jan 2025 – Present</div>
+          <div class="proj-desc">
+            Collaborating on a machine learning pipeline for ocular disease classification, including data preprocessing, model training, and deployment for real-world usability.
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section id="activities">
+      <h2>Activities & Leadership</h2>
+      <ul class="activity-list">
+        <li>
+          <strong>Vice President</strong> &mdash; Enigma: The Quizzing Club of DPS Noida (Apr 2022 – May 2023)
+        </li>
+        <li>
+          <strong>Member</strong> &mdash; eSpice: The Tech Club of DPS Noida (May 2022 – May 2023)
+          <br>Participated in 50+ tech competitions and quizzes.
+        </li>
+        <li>
+          <strong>Firmware Member</strong> &mdash; Formula Racing Club at UC Davis (FSAE Electric) (Sep 2023 – Present)
+        </li>
+        <li>
+          <strong>Co-hort Explorer</strong> &mdash; Google Developer Student Club, UC Davis (Sep 2024 - Present)
+        </li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:grover@ucdavis.edu">grover@ucdavis.edu</a>
+        <a href="tel:+16282338148">(628)-233-8148</a>
+        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>
+        <a href="https://github.com/groverucd" target="_blank">GitHub</a>
+      </div>
+      <p style="margin-top:1rem;color:#888;">Davis, CA</p>
+    </section>
+  </div>
